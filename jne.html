@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>TeakeOS - Ультимативная операционная система</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 48px;
+            margin-bottom: 10px;
+            font-family: Arial, sans-serif;
+            letter-spacing: 2px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .feature {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background-color: #ecf0f1;
+        }
+        
+        .spec-item {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+        
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: #95a5a6;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #7f8c8d;
+            transform: translateY(-2px);
+        }
+        
+        .btn-download {
+            background-color: #27ae60;
+            color: white;
+        }
+        
+        .btn-download:hover {
+            background-color: #219a52;
+            transform: translateY(-2px);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 1000;
+        }
+        
+        .modal-content {
+            position: relative;
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            width: 70%;
+            max-width: 800px;
+            border-radius: 10px;
+        }
+        
+        .close-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        
+        .modal-text {
+            margin-bottom: 20px;
+        }
+        
+        .footer-text {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .site-link {
+            color: #3498db;
+            text-decoration: none;
+            margin: 10px;
+        }
+        
+        .site-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">☕ TeakeOS</div>
+        <h1>Где каждый пиксель важен</h1>
+        <p>Революционная операционная система нового поколения</p>
+    </div>
+
+    <main class="features">
+        <div class="feature">
+            <h2>⚡ Молниеносная скорость</h2>
+            <p>TeakeOS загружается всего за 2 секунды и потребляет минимум ресурсов. Оптимизированная система кэширования и прогрессивная загрузка компонентов делают работу с системой максимально комфортной.</p>
+            <button class="btn btn-primary" onclick="showModal('speed')">Узнать больше</button>
+        </div>
+        
+        <div class="feature">
+            <h2>🛡 Абсолютная безопасность</h2>
+            <p>Продвинутый движок защиты на основе ИИ и квантовых вычислений обеспечивает многоуровневую защиту вашей системы и данных. Встроенный сканер угроз и автоматическое обновление безопасности делают систему практически неуязвимой.</p>
+            <button class="btn btn-primary" onclick="showModal('security')">Узнать больше</button>
+        </div>
+        
+        <div class="feature">
+            <h2>🎨 Интуитивный интерфейс</h2>
+            <p>Адаптивный дизайн с поддержкой дополненной реальности создает уникальный опыт взаимодействия с системой. Система учитывает ваши привычки и настраивается под вас в автоматическом режиме.</p>
+            <button class="btn btn-primary" onclick="showModal('interface')">Узнать больше</button>
+        </div>
+    </main>
+
+    <section class="specs">
+        <div class="spec-item">
+            <h3>Системные требования</h3>
+            <ul>
+                <li>Процессор: от 1 ГГц</li>
+                <li>ОЗУ: 512 МБ</li>
+                <li>Хранилище: 5 ГБ</li>
+                <li>Графическая карта: совместимая с DirectX 9.0c</li>
+                <li>Система: x86/x64</li>
+            </ul>
+        </div>
+        <div class="spec-item">
+            <h3>Особенности</h3>
+            <ul>
+                <li>Поддержка 100+ языков</li>
+                <li>Встроенный ИИ-помощник</li>
+                <li>Автоматическое энергосбережение</li>
+                <li>Кроссплатформенная синхронизация</li>
+                <li>Встроенный антивирус</li>
+            </ul>
+        </div>
+    </section>
+
+    <button class="btn btn-download" onclick="rickroll()">Скачать TeakeOS</button>
+
+    <div class="footer-text">
+        мой ник в бс teake) скачайте ос пж
+    </div>
+
+    <div class="footer-text">
+        <a href="https://teakeos.com" class="site-link">Перейти на официальный сайт TeakeOS</a>
+    </div>
+
+    <!-- Модальные окна -->
+    <div id="speed-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-text">
+                <h2>Технология скорости TeakeOS</h2>
+                <p>Наша система использует революционный подход к управлению ресурсами:</p>
+                <ul>
+                    <li>Прогрессивная загрузка компонентов</li>
+                    <li>Интеллектуальное кэширование данных</li>
+                    <li>Оптимизированный запуск приложений</li>
+                    <li>Динамическое управление памятью</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="security-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-text">
+                <h2>Система безопасности TeakeOS</h2>
+                <p>Многоуровневая защита вашей системы:</p>
+                <ul>
+                    <li>Квантовое шифрование данных</li>
+                    <li>Искусственный интеллект в системе защиты</li>
+                    <li>Автоматический сканер угроз</li>
+                    <li>Безопасное хранение данных</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="interface-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-text">
+                <h2>Интерфейс TeakeOS</h2>
+                <p>Уникальный подход к взаимодействию:</p>
+                <ul>
+                    <li>Адаптивный дизайн под любое устройство</li>
+                    <li>Поддержка дополненной реальности</li>
+                    <li>Интеллектуальная система настроек</li>
+                    <li>Персонализация под ваши привычки</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showModal(id) {
+            const modal = document.getElementById(`${id}-modal`);
+            modal.style.display = 'block';
+            
+            const closeBtn = modal.querySelector('.close-btn');
+            closeBtn.onclick = () => modal.style.display = 'none';
+            
+            window.onclick = (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            };
+        }
+
+        function rickroll() {
+            window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+        }
+    </script>
+</body>
+</html>
